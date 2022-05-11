@@ -1,11 +1,13 @@
 import React from 'react';
 import ClientItem from "./ClientItem";
+import Create from "./Create";
 
 const ClientTable = (props) => {
     let serialNumber = 1;
     return (
         <div>
             <h2>Clients</h2>
+            <Create addNewClient={props.addNewClient}/>
             <table className="table">
                 <thead>
                 <tr>

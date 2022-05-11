@@ -16,6 +16,9 @@ const initialClients = [
 ]
 function App() {
     const [clients,setClients] =useState(initialClients)
+    const addNewClient = (newClient) => {
+    setClients([...clients,{...newClient}])
+    }
   return (
     <div className='container' >
    <h1>Accounting</h1>
@@ -26,7 +29,7 @@ function App() {
 
 
       <Links/>
-      <Switch clients={clients}/>
+      <Switch clients={clients} addNewClient={addNewClient}/>
     </div>
   );
 }

@@ -8,7 +8,7 @@ const Switch = (props) => {
     return (
         <div>
             <Routes>
-                <Route path="clients" element={<ClientTable clients={props.clients}/>} />
+                <Route path="clients" element={<ClientTable clients={props.clients} addNewClient={props.addNewClient}/>} />
                 <Route path="orders" element={<Orders/>} />
                 <Route path="services" element={<Services/>} />
 
