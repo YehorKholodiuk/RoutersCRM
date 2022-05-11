@@ -13,6 +13,13 @@ const Create = (props) => {
     const [createdAt,setCreatedAt]=useState('')
 
     const setButtonHandler = () => {
+        const newClient = {name,address,contactPhone,createdAt}
+        props.addNewClient(newClient)
+        toggle()
+        setName('')
+        setAddress('')
+        setContactPhone('')
+        setCreatedAt('')
 
     }
     return (
@@ -32,16 +39,26 @@ const Create = (props) => {
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label">Address</label>
-                            <input type="text" class="form-control" id="exampleInputPassword1"/>
+                            <input type="text" class="form-control" id="exampleInputPassword1"
+                                   value={address}
+                                   onChange={(event)=>setAddress(event.target.value)}
+
+                            />
                         </div>
                         <div className="mb-3">
                             <label htmlFor="exampleInputPassword1" className="form-label">Phone</label>
-                            <input type="number" className="form-control" id="exampleInputPassword1"/>
+                            <input type="number" className="form-control" id="exampleInputPassword1"
+                                   value={contactPhone}
+                                   onChange={(event)=>setContactPhone(event.target.value)}
+                            />
                         </div>
 
                         <div className="mb-3">
                             <label htmlFor="exampleInputPassword1" className="form-label">Created at</label>
-                            <input type="date" className="form-control" id="exampleInputPassword1"/>
+                            <input type="date" className="form-control" id="exampleInputPassword1"
+                                   value={createdAt}
+                                   onChange={(event)=>setCreatedAt(event.target.value)}
+                            />
                         </div>
 
                     </form>
