@@ -12,6 +12,8 @@ const Create = (props) => {
     const [contactPhone,setContactPhone]=useState('')
     const [createdAt,setCreatedAt]=useState('')
 
+
+
     const setButtonHandler = () => {
         const newClient = {name,address,contactPhone,createdAt}
         props.addNewClient(newClient)

@@ -19,6 +19,11 @@ function App() {
     const addNewClient = (newClient) => {
     setClients([...clients,{...newClient}])
     }
+
+    const deleteClient = (id) => {
+        const newClients = clients.filter(el => el.id !== id)
+        setClients(newClients)
+    }
   return (
     <div className='container' >
    <h1>Accounting</h1>
@@ -29,7 +34,7 @@ function App() {
 
 
       <Links/>
-      <Switch clients={clients} addNewClient={addNewClient}/>
+      <Switch clients={clients} addNewClient={addNewClient} deleteClient={deleteClient}/>
     </div>
   );
 }
