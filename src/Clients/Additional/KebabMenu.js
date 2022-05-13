@@ -5,6 +5,8 @@ import MenuItem from '@mui/material/MenuItem';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import {useState} from "react";
 import Delete from "./Delete";
+import Services from "../../Services/Services";
+import {Link, Route} from "react-router-dom";
 
 
 const ITEM_HEIGHT = 48;
@@ -24,11 +26,12 @@ export default function KebabMenu(props) {
         setOpenModal(!openModal);
     }
     const handleDeleteButton = () => {
-    openDeleteModal()
+        openDeleteModal()
         setAnchorEl(null);
     }
     const handleUpdateButton = () => {
         setAnchorEl(null);
+        props.setCurrent(props.updatedData)
     }
     return (
         <div>
@@ -61,9 +64,9 @@ export default function KebabMenu(props) {
                 <MenuItem onClick={handleDeleteButton}>
                     Delete
                 </MenuItem>
-                <MenuItem onClick={handleUpdateButton}>
+                <Link to={"/clients/update"}><MenuItem onClick={handleUpdateButton}>
                     Update
-                </MenuItem>
+                </MenuItem></Link>
 
             </Menu>
             <Delete toggle={openDeleteModal}

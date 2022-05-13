@@ -20,7 +20,7 @@ const ClientTable = (props) => {
                 </tr>
                 </thead>
                 <tbody>
-                {props.clients.map(el => <ClientItem serialNumber={serialNumber++}client={el} deleteClient={props.deleteClient}/>)}
+                {props.clients.map(el => <ClientItem serialNumber={serialNumber++} client={el} key={el.id}  deleteClient={props.deleteClient} setCurrent={props.setCurrent}  />)}
                 </tbody>
             </table>
 

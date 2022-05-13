@@ -3,7 +3,7 @@ import KebabMenu from "./Additional/KebabMenu";
 
 
 const ClientItem = (props) => {
-    const{name,address,contactPhone,createdAt, id} =props.client;
+    const{name,address,contactPhone,createdAt, id} = props.client;
     return (
 
             <tr>
@@ -12,7 +12,7 @@ const ClientItem = (props) => {
                 <td>{address}</td>
                 <td>{contactPhone}</td>
                 <td>{createdAt}</td>
-                <td><KebabMenu deletedItem={name} deletedItemId={id} deleteClient={props.deleteClient}/></td>
+                <td><KebabMenu deletedItem={name} deletedItemId={id} deleteClient={props.deleteClient}  setCurrent={props.setCurrent}  updatedData={props.client}/></td>
             </tr>
 
     );
